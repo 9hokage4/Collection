@@ -1,9 +1,9 @@
 public class Car {
     private String brand;
-    private String name;
+    private int number;
 
-    public Car(String brand, String name) {
-        this.name = name;
+    public Car(String brand, int number) {
+        this.number = number;
         this.brand = brand;
     }
 
@@ -11,7 +11,7 @@ public class Car {
         return brand;
     }
 
-    public String getName() {
-        return name;
+    public int getName() {
+        return number;
     }
 }
