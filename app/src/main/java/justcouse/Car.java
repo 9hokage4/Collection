@@ -1,3 +1,5 @@
+package justcouse;
+
 public class Car {
     private String brand;
     private int number;

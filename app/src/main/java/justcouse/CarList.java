@@ -1,3 +1,5 @@
+package justcouse;
+
 public interface CarList {
     Car get(int index);
 

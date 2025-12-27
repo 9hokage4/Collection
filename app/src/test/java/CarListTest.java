@@ -1,9 +1,12 @@
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import justcouse.Car;
+import justcouse.CarArrayList;
+import justcouse.CarList;
 
 public class CarListTest {
 
@@ -11,6 +14,7 @@ public class CarListTest {
 
     @BeforeEach
     public void setUp() throws Exception {
+        carList = new CarArrayList();
         for (int i = 0; i < 100; i++) {
             carList.add(new Car("Brand" + i, i));
         }
@@ -32,7 +36,7 @@ public class CarListTest {
         Car car = new Car("BMW", 15);
         carList.add(car);
 
-        assertFalse(carList.remove(car));
+        assertTrue(carList.remove(car));
         assertEquals(100, carList.size());
     }
 
