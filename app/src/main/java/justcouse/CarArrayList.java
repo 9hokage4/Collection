@@ -23,6 +23,15 @@ public class CarArrayList implements CarList {
     }
 
     @Override
+    public void add(Car car, int index) {
+        for (int i = size; i > index; i--) {
+            array[i] = array[i - 1];
+        }
+        array[index] = car;
+        size++;
+    }
+
+    @Override
     public boolean remove(Car car) {
         for (int i = 0; i < size; i++) {
             if (array[i].equals(car))
