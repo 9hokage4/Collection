@@ -5,7 +5,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import justcouse.Car;
-import justcouse.CarArrayList;
+import justcouse.CarLinkedList;
 import justcouse.CarList;
 
 public class CarListTest {
@@ -14,7 +14,7 @@ public class CarListTest {
 
     @BeforeEach
     public void setUp() throws Exception {
-        carList = new CarArrayList();
+        carList = new CarLinkedList();
         for (int i = 0; i < 100; i++) {
             carList.add(new Car("Brand" + i, i));
         }
