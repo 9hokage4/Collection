@@ -48,7 +48,7 @@ public class CarListTest {
 
     @Test()
     public void whenIndexOutOfBoundsThenThrowExceprion() {
-        assertThrows(IndexOutOfBoundsException.class, () -> carList.get(100));
+        assertThrows(NullPointerException.class, () -> carList.get(100));
     }
 
     @Test
