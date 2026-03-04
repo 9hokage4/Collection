@@ -16,4 +16,28 @@ public class Car {
     public int getName() {
         return number;
     }
+
+    public void setNumber(int num) {
+        this.number = num;
+    }
+
+    public int getNumber() {
+        return number;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Car) {
+            Car car = (Car) obj;
+            return car.brand.equals(this.brand) && car.number == this.number;
+        } else {
+            return false;
+        }
+    }
+
+    @Override
+    public int hashCode() {
+        return brand.hashCode() + number;
+    }
+    
 }
