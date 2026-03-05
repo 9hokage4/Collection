@@ -1,5 +1,7 @@
 package justcouse;
 
+import java.util.Iterator;
+
 public class CarhashSet implements CarSet {
 
     private int size = 0;
@@ -111,6 +113,39 @@ public class CarhashSet implements CarSet {
             }
         }
         array = newArray;
+    }
+
+    @Override
+    public Iterator<Car> iterator() {
+        return new Iterator<Car>() {
+
+            int index = 0;
+            int arrayIndex = 0;
+            Entry entry;
+
+            @Override
+            public boolean hasNext() {
+                return index < size;
+            }
+
+            @Override
+            public Car next() {
+                while (array[arrayIndex] == null) {
+                    arrayIndex++;
+                }
+                if (entry == null) {
+                    entry = array[arrayIndex];
+                }
+                Car result = entry.value;
+                entry = entry.next;
+                if (entry == null) {
+                    arrayIndex++;
+                }
+                index++;
+                return result;
+
+            }
+        };
     }
 
     private int getElementPosition(Car car, int arrayLength) {
