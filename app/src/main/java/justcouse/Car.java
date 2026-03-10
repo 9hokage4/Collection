@@ -1,6 +1,6 @@
 package justcouse;
 
-public class Car {
+public class Car implements Comparable<Car>{
     private String brand;
     private int number;
 
@@ -39,5 +39,17 @@ public class Car {
     public int hashCode() {
         return brand.hashCode() + number;
     }
-    
+
+    @Override
+    public int compareTo(Car o){
+        return brand.compareTo(o.brand);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand='" + brand + '\'' +
+                ", number=" + number +
+                '}';
+    }
 }
